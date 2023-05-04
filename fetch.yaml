@@ -1,0 +1,8 @@
+---
+- name: fetching
+  hosts: all
+  tasks: 
+   - name:
+     fetch:
+        src: /etc/hosts
+        dest: /home/ansible

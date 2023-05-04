@@ -1,0 +1,10 @@
+---
+- name: writing contents
+  hosts: all
+  tasks: 
+    - name: writing some contents
+      blockinfile:
+        path: /home/ansible/hosts
+        block: | 
+             192.23.45145
+             hello world

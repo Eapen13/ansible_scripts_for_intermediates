@@ -1,0 +1,18 @@
+---
+- name: setting selinux
+  hosts: all
+  become: true
+  tasks: 
+     - name: installing binaries
+       yum: 
+         name: policycoreutils-python-utils
+     - name: setting selinux type
+       community.general.sefcontext:
+         target: /home/ansible/testingse.txt
+         setype: tmp_t
+         state: present
+       notify:
+          - selinuxtype
+  handlers:
+     - name: selinuxtype
+       command: restorecon -Rv /home/ansible/testingse.txt

@@ -1,0 +1,12 @@
+---
+- name: creating file
+  hosts: all
+  tasks:
+    - name: using file module
+      file: 
+       path: /home/ansible/checkselinuxtype
+       owner: ansible
+       mode: 0777
+       state: touch 
+       setype: public_content_rw_t
+       

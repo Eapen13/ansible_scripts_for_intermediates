@@ -1,0 +1,9 @@
+---
+- name: copyting template to /etc/demo
+  template:
+      src: templates/demo.j2
+      dest: /etc/demo
+      owner: root
+      group: root
+      mode: 0777  
+      

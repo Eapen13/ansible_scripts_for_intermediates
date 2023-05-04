@@ -1,0 +1,8 @@
+---
+- name: running my role
+  hosts: all
+  become: true
+  
+  roles: 
+    - role: myrole
+
